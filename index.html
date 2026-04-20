@@ -44,7 +44,19 @@
   }
 }
 *{margin:0;padding:0;box-sizing:border-box;}
+<script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loader").style.opacity = "0";
+    document.getElementById("loader").style.transition = "0.5s";
 
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+    }, 500);
+
+  }, 1200); // tiempo del loader
+});
+</script>
 body<div id="loader">
   <div class="loader-content">
     <h1>Facu.</h1>
