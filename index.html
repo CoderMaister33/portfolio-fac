@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Facundo Alvarez | Portfolio</title>
@@ -9,48 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
   font-family:'Inter',sans-serif;
   background:#fff;
   color:#000;
-}
-
-/* LOADER */
-#loader{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:#000;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-.loader-content{
-  text-align:center;
-  color:white;
-}
-
-.loader-content h1{
-  font-family:'Playfair Display';
-  font-size:2.5rem;
-  margin-bottom:20px;
-}
-
-.line{
-  width:0;
-  height:2px;
-  background:#ff2e2e;
-  animation:loadLine 1.5s ease forwards;
-}
-
-@keyframes loadLine{
-  to{ width:200px; }
 }
 
 /* NAV */
@@ -62,7 +26,6 @@ nav{
   padding:20px 10%;
   backdrop-filter:blur(10px);
   background:rgba(255,255,255,0.7);
-  border-bottom:1px solid rgba(0,0,0,0.05);
   z-index:100;
 }
 
@@ -73,8 +36,8 @@ nav{
   display:flex;
   align-items:center;
   padding:0 10%;
-  overflow:hidden;
   color:white;
+  overflow:hidden;
 }
 
 .video-bg{
@@ -85,35 +48,31 @@ nav{
   z-index:-2;
 }
 
+/* fallback por si el video falla */
+.hero{
+  background:url('proyecto1.png') center/cover no-repeat;
+}
+
 .hero::after{
   content:"";
   position:absolute;
   width:100%;
   height:100%;
-  background:linear-gradient(
-    to right,
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.1)
-  );
+  background:linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
   z-index:-1;
 }
 
-.hero-content{
-  max-width:700px;
-}
-
-.hero h2{
+.hero-content h2{
   font-size:4rem;
   line-height:1.1;
 }
 
-.hero span{
-  color:#ff2e2e;
-}
+.hero span{ color:#ff2e2e; }
 
 .hero p{
   margin-top:20px;
   opacity:0.8;
+  font-size:1.1rem;
 }
 
 /* SECTIONS */
@@ -140,7 +99,6 @@ h3{
   height:280px;
   object-fit:cover;
   border-radius:50%;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
 
 /* PROJECTS */
@@ -151,28 +109,23 @@ h3{
 }
 
 .card{
-  height:300px;
-  overflow:hidden;
-  border-radius:12px;
   position:relative;
+  height:320px;
+  border-radius:12px;
+  overflow:hidden;
 }
 
 .card img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:0.6s;
-}
-
-.card:hover img{
-  transform:scale(1.08);
 }
 
 .overlay{
   position:absolute;
   bottom:0;
   width:100%;
-  padding:25px;
+  padding:20px;
   background:linear-gradient(transparent, rgba(0,0,0,0.9));
   color:white;
 }
@@ -186,20 +139,8 @@ h3{
 .skills span{
   display:inline-block;
   border:1px solid black;
-  padding:10px 14px;
+  padding:10px;
   margin:6px;
-  transition:0.3s;
-}
-
-.skills span:hover{
-  background:black;
-  color:white;
-}
-
-/* CONTACT */
-.contact a{
-  color:#c40000;
-  text-decoration:none;
 }
 
 /* FOOTER */
@@ -207,22 +148,11 @@ footer{
   text-align:center;
   padding:40px;
   border-top:1px solid #eee;
-  font-size:14px;
-  opacity:0.6;
 }
-
 </style>
 </head>
 
 <body>
-
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-content">
-    <h1>Facu.</h1>
-    <div class="line"></div>
-  </div>
-</div>
 
 <nav>
   <h1>Facundo Alvarez</h1>
@@ -230,14 +160,16 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
+
   <video autoplay muted loop playsinline class="video-bg">
     <source src="video.mp4" type="video/mp4">
   </video>
 
   <div class="hero-content">
-    <h2>No hago publicidad.<br><span>Creo ideas que generan valor.</span></h2>
-    <p>Creativo enfocado en estrategia, cuentas y negocio.</p>
+    <h2>No hago publicidad.<br><span>Construyo ideas que impactan negocios.</span></h2>
+    <p>Estrategia, creatividad y dirección de cuentas enfocadas en resultados.</p>
   </div>
+
 </section>
 
 <!-- ABOUT -->
@@ -246,11 +178,10 @@ footer{
 
   <div class="about">
     <img src="facu.jpg">
-
     <p>
-      Estudiante de Publicidad con enfoque en gestión y dirección de cuentas.
-      Me especializo en entender los negocios para construir estrategias de comunicación efectivas.
-      Busco desarrollarme profesionalmente en el ámbito creativo y estratégico.
+      Estudiante de Publicidad con enfoque en dirección de cuentas. Me especializo en entender los negocios
+      para transformar necesidades en estrategias de comunicación efectivas. Busco desarrollarme profesionalmente
+      en el ámbito creativo y estratégico.
     </p>
   </div>
 </section>
@@ -261,26 +192,32 @@ footer{
 
   <div class="grid">
 
+    <!-- YPF -->
     <div class="card">
       <img src="proyecto1.png">
       <div class="overlay">
-        <h4>Proyecto 1</h4>
-        <a href="https://canva.link/7gv2m7lp5w9j3em" target="_blank">Ver proyecto</a>
+        <h4>Campaña YPF — Mundial 2026</h4>
+        <p>Concepto creativo + estrategia de comunicación</p>
+        <a href="https://docs.google.com/presentation/d/1ysfBiXsdlIbIGFqWksBDBcAnGyepsW2wo95g-L3WCiA" target="_blank">Ver caso</a>
       </div>
     </div>
 
+    <!-- LOGISTICA NAVAL -->
     <div class="card">
       <img src="proyecto2.png">
       <div class="overlay">
-        <h4>Proyecto 2</h4>
-        <a href="https://canva.link/bcmko8zzc4ujf2a" target="_blank">Ver proyecto</a>
+        <h4>Logística Naval</h4>
+        <p>Gestión de redes + UX web</p>
+        <a href="https://www.logisticanaval.com.ar/" target="_blank">Ver web</a>
       </div>
     </div>
 
+    <!-- OTRO -->
     <div class="card">
       <img src="proyecto3.png">
       <div class="overlay">
-        <h4>Proyecto 3</h4>
+        <h4>Proyecto Creativo</h4>
+        <p>Desarrollo estratégico y conceptual</p>
         <a href="https://canva.link/jyr3mmfahnx6dus" target="_blank">Ver proyecto</a>
       </div>
     </div>
@@ -300,7 +237,7 @@ footer{
 </section>
 
 <!-- CONTACT -->
-<section class="section contact">
+<section class="section">
   <h3>Contacto</h3>
   <p>Email: agusfacu02@gmail.com</p>
   <p>Tel: 1123069902</p>
@@ -310,19 +247,6 @@ footer{
 <footer>
   <p>© 2026 Facundo Alvarez</p>
 </footer>
-
-<script>
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const loader = document.getElementById("loader");
-    loader.style.opacity = "0";
-    loader.style.transition = "0.5s";
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
-  }, 1000);
-});
-</script>
 
 </body>
 </html>
