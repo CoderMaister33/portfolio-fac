@@ -1,12 +1,12 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Facundo Alvarez | Creative Portfolio</title>
+<title>Facundo Alvarez | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -15,7 +15,6 @@ body{
   font-family:'Inter',sans-serif;
   background:#fff;
   color:#000;
-  overflow-x:hidden;
 }
 
 /* NAV */
@@ -30,54 +29,27 @@ nav{
   z-index:100;
 }
 
-nav h1{
-  font-family:'Playfair Display';
-}
-
-nav a{
-  margin-left:20px;
-  text-decoration:none;
-  color:black;
-  position:relative;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  width:0;
-  height:2px;
-  bottom:-3px;
-  left:0;
-  background:#c40000;
-  transition:0.3s;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
 /* HERO */
 .hero{
   height:100vh;
   display:flex;
   align-items:center;
   padding:0 10%;
-  background:linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('facu.jpg');
+  background:
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('facu.jpg');
   background-size:cover;
   background-position:center;
+  color:white;
 }
+
+.hero h2{
   font-size:4rem;
-  max-width:800px;
-  line-height:1.1;
+  max-width:700px;
 }
 
 .hero span{
-  color:#c40000;
-}
-
-.hero p{
-  margin-top:20px;
-  opacity:0.6;
+  color:#ff2e2e;
 }
 
 /* SECTIONS */
@@ -86,41 +58,57 @@ nav a:hover::after{
   border-top:1px solid #eee;
 }
 
-/* ANIMATION */
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
+h3{
+  font-family:'Playfair Display';
+  font-size:2rem;
+  margin-bottom:30px;
 }
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+/* ABOUT */
+.about{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-/* CARDS */
+.about img{
+  width:280px;
+  border-radius:10px;
+}
+
+/* PROJECTS */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:30px;
 }
 
 .card{
-  border:1px solid #ddd;
-  padding:30px;
-  transition:0.4s;
+  height:300px;
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
 }
 
-.card:hover{
-  transform:translateY(-10px);
-  border-color:#c40000;
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.5s;
 }
 
-/* TITLES */
-h3{
-  font-family:'Playfair Display';
-  font-size:2.2rem;
-  margin-bottom:20px;
+.card:hover img{
+  transform:scale(1.1);
+}
+
+.overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:20px;
+  background:linear-gradient(transparent, black);
+  color:white;
 }
 
 /* SKILLS */
@@ -129,12 +117,6 @@ h3{
   border:1px solid black;
   padding:10px 14px;
   margin:6px;
-  transition:0.3s;
-}
-
-.skills span:hover{
-  background:black;
-  color:white;
 }
 
 /* CONTACT */
@@ -146,10 +128,8 @@ h3{
 /* FOOTER */
 footer{
   text-align:center;
-  padding:50px;
+  padding:40px;
   border-top:1px solid #eee;
-  font-size:14px;
-  opacity:0.6;
 }
 </style>
 </head>
@@ -158,147 +138,74 @@ footer{
 
 <nav>
   <h1>Facundo Alvarez</h1>
-  <div>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#contact">Contact</a>
-  </div>
 </nav>
 
-<section id="about" class="section reveal">
+<!-- HERO -->
+<section class="hero">
+  <h2>No hago publicidad.<br><span>Creo ideas que generan valor.</span></h2>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
   <h3>Sobre mí</h3>
 
-  <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
+  <div class="about">
+    <img src="facu.jpg">
 
-    <img src="facu.jpg" style="width:300px; border-radius:10px;">
-
-    <p style="max-width:500px;">
-      Soy estudiante de la Licenciatura en Publicidad con orientación en gestión y dirección de cuentas.
-      Me especializo en comprender las necesidades del negocio para traducirlas en estrategias de comunicación efectivas.
-
-      Cuento con experiencia en gestión de redes sociales y participación en procesos de diseño UX,
-      lo que me permite abordar proyectos desde una mirada integral.
-
-      Actualmente busco desarrollarme profesionalmente en el ámbito publicitario.
+    <p>
+      Estudiante de Publicidad con enfoque en gestión y dirección de cuentas.
+      Me especializo en entender los negocios para construir estrategias de comunicación efectivas.
+      Busco desarrollarme profesionalmente en el ámbito creativo y estratégico.
     </p>
-
   </div>
 </section>
 
-<section id="work" class="section">
-  <h3 class="reveal">Proyectos</h3>
+<!-- PROYECTOS -->
+<section class="section">
+  <h3>Proyectos</h3>
 
   <div class="grid">
 
-    <!-- PROYECTO 1 -->
- <div class="card reveal" style="background:url('proyecto1.png'); background-size:cover; color:white; position:relative;">
-
-  <div style="background:rgba(0,0,0,0.6); padding:20px; height:100%;">
-
-    <h4>Campaña Publicitaria</h4>
-    <p>Desarrollo de concepto estratégico y creativo.</p>
-
-    <a href="LINK" target="_blank" style="color:#ff4d4d;">Ver proyecto</a>
-
-  </div>
-
-</div>
-
-  </div>
-
-</div>>
-      <h4>Campaña Publicitaria — Proyecto 1</h4>
-      <p>
-        Desarrollo de campaña desde la conceptualización estratégica hasta la presentación final.
-        Participación como creativo principal y responsable de cuentas dentro del equipo.
-      </p>
-
-      <p><strong>Rol:</strong> Creativo & Cuentas</p>
-
-      <p>
-        Enfoque basado en la construcción de una idea central sólida,
-        alineada con los objetivos del brief y orientada a generar impacto en el público.
-      </p>
-
-      <a href="https://canva.link/7gv2m7lp5w9j3em" target="_blank">Ver proyecto completo</a>
+    <div class="card">
+      <img src="proyecto1.png">
+      <div class="overlay">
+        <h4>Proyecto 1</h4>
+        <a href="https://canva.link/7gv2m7lp5w9j3em" target="_blank">Ver proyecto</a>
+      </div>
     </div>
 
-    <!-- PROYECTO 2 -->
-    <div class="card reveal" style="background:url('proyecto2.png'); background-size:cover; color:white; position:relative;">
-
-  <div style="background:rgba(0,0,0,0.6); padding:20px; height:100%;">
-
-    <h4>Campaña Publicitaria</h4>
-    <p>Desarrollo de concepto estratégico y creativo.</p>
-
-    <a href="LINK" target="_blank" style="color:#ff4d4d;">Ver proyecto</a>
-
-  </div>
-
-</div>
-
-</div>>
-      <h4>Campaña Publicitaria — Proyecto 2</h4>
-      <p>
-        Desarrollo de propuesta creativa con foco en estrategia de comunicación y posicionamiento de marca.
-      </p>
-
-      <p><strong>Rol:</strong> Creativo & Cuentas</p>
-
-      <p>
-        Responsable de la idea principal y la narrativa de presentación,
-        articulando el concepto creativo con los objetivos comerciales.
-      </p>
-
-      <a href="https://canva.link/bcmko8zzc4ujf2a" target="_blank">Ver proyecto completo</a>
+    <div class="card">
+      <img src="proyecto2.png">
+      <div class="overlay">
+        <h4>Proyecto 2</h4>
+        <a href="https://canva.link/bcmko8zzc4ujf2a" target="_blank">Ver proyecto</a>
+      </div>
     </div>
 
-    <!-- PROYECTO 3 -->
-   <div class="card reveal" style="background:url('proyecto3.png'); background-size:cover; color:white; position:relative;">
-
-  <div style="background:rgba(0,0,0,0.6); padding:20px; height:100%;">
-
-    <h4>Campaña Publicitaria</h4>
-    <p>Desarrollo de concepto estratégico y creativo.</p>
-
-    <a href="LINK" target="_blank" style="color:#ff4d4d;">Ver proyecto</a>
-
-  </div>
-
-</div>
-</div>>
-      <h4>Campaña Publicitaria — Proyecto 3</h4>
-      <p>
-        Proyecto orientado a generar conexión entre marca y audiencia a través de una propuesta conceptual clara.
-      </p>
-
-      <p><strong>Rol:</strong> Creativo & Cuentas</p>
-
-      <p>
-        Lideré el desarrollo de la idea creativa y la construcción del discurso estratégico,
-        asegurando coherencia entre insight, concepto y ejecución.
-      </p>
-
-      <a href="https://canva.link/jyr3mmfahnx6dus" target="_blank">Ver proyecto completo</a>
+    <div class="card">
+      <img src="proyecto3.png">
+      <div class="overlay">
+        <h4>Proyecto 3</h4>
+        <a href="https://canva.link/jyr3mmfahnx6dus" target="_blank">Ver proyecto</a>
+      </div>
     </div>
 
   </div>
 </section>
-  </div>
-</section>
 
-<section class="section reveal">
+<!-- SKILLS -->
+<section class="section">
   <h3>Herramientas</h3>
   <div class="skills">
     <span>Photoshop</span>
     <span>Premiere</span>
     <span>IA</span>
     <span>Marketing</span>
-    <span>Inglés</span>
   </div>
 </section>
 
-<section id="contact" class="section reveal">
+<!-- CONTACT -->
+<section class="section contact">
   <h3>Contacto</h3>
   <p>Email: agusfacu02@gmail.com</p>
   <p>Tel: 1123069902</p>
@@ -308,24 +215,6 @@ footer{
 <footer>
   <p>© 2026 Facundo Alvarez</p>
 </footer>
-
-<script>
-function revealOnScroll(){
-  let reveals=document.querySelectorAll('.reveal');
-
-  for(let i=0;i<reveals.length;i++){
-    let windowHeight=window.innerHeight;
-    let elementTop=reveals[i].getBoundingClientRect().top;
-    let elementVisible=100;
-
-    if(elementTop < windowHeight - elementVisible){
-      reveals[i].classList.add("active");
-    }
-  }
-}
-
-window.addEventListener("scroll",revealOnScroll);
-</script>
 
 </body>
 </html>
